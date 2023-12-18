@@ -1,0 +1,12 @@
+Am ales sa folosesc stack deoarece este o structura de date buna pentru a mentine sirul de numere sortat
+si pentru ca a fost cea mai usoara structura de date pentru a manipula sirul de numere in maniera respectiva
+
+Verificam daca bagam un element nou in stiva aceasta va fi mereu sortata descrescator;
+Daca gasim un element mai mare decat cel din varful stivei, atunci am gasit un "pit" in drumul nostru;
+iar toate elementele mai mici decat cel curent (x) nu mai sunt relevante pentru ca nu mai putem forma un "pit" cu ele
+deci le scoatem din stiva ca sa avem doar elemente mai mari decat x si sa pastram conditia noastra initiala, adica ca stiva sa fie sortata descrescator
+
+O alta conditie, este ca drumul sa poata fi considerat un "pit" trebuie sa aiba cel putin 2 elemente in stiva, asa ca verific conditia asta inainte sa maresc contorul
+
+Complexitate: O(n)
+Complexitate spatiu: O(n) cel mai rau caz

@@ -1,0 +1,12 @@
+Folosim un vector de frecvente de dimensiunea p (pt ca impartim numarul la p, deci putem avea resturi de la 0 la p-1);
+Il folosim pt a evita sa adaugam in coada numere care au acelasi rest la impartirea la p;
+Folosim o coada pt a genera si procesa prima data numerele mai mici;
+Verific daca restul a mai fost intalnit anterior
+
+Nu mai adaugam in coada numere care au acelasi rest la impartirea la p, deoarece daca un rest a fost deja generat de un numar,
+toate numerele generate prin adaugare de cifre suplimentare la acel numar vor avea resturi deja explorate anterior
+
+Adaugam numerele in coada in ordine crescatoare pt a procesa prima oara pe cele mai mici
+
+Complexitate timp: O(4^k)
+Complexitate spatiu: O(4^k) cel mai rau caz pt coada; O(p) pt vectorul de frecvente

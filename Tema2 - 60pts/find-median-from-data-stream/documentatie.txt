@@ -1,0 +1,26 @@
+Ideea principala este sa fie inlocuit algoritmul de In-Order Insert (care va fi ultra ineficient, O(n) pentru Add)
+
+O sa utilizam doua Heapuri, si anume:
+    1. MinHeap
+    2. MaxHeap, ale carui elemente (TOATE) vor fi mai mare decat MinHeap
+
+La fel, diferenta numarului de elemente dintre cele doua heapuri nu ar trebuie sa depaseasca 1, adica sa fie aproximativ egale
+
+Cand o sa adaugam elementele, o sa avem grija la prioritatile pe care le dam numerelor noastre, deoarece pentru:
+    1. MinHeap vrem sa scoatem elementul MAXIM, de aceea prioritatea va fi numarul insasi (pt ca Dequeue scoate elementul cu prioritatea cea mai mare)
+    2. MaxHeap vrem sa scoatem elementul MINIM, de aceea prioritatea va fi opusul numarului
+
+Primul pas pe care il fac in algoritm este sa adaug elementul in minHeap
+
+Dupa ce il adaug, scot elementul maxim din minHeap si il adaug in maxHeap, pentru a mentine acea "balanta" intre elementele ale ambelor heapuri,
+adica pentru a ma asigura ca in minHeap o sa am toate elementele care sunt mai mici decat elementele din maxHeap
+
+Urmatorul pas este verificarea, care asigura ca diferenta dintre numarul de elemente dintre heapurile noastre este mai mica sau egala decat unu
+In caz ca este mai mare, se va scoate elementul minim din maxHeap si se va pune in minHeap.
+
+Metoda FindMedian este straightforward, verific daca am acelasi numar de elemente,
+DACA DA: Scot elementul maxim din minHeap si elementul minim din maxHeap si impart la 2
+DACA NU: iau elementul din mijloc, adica cel din maxHeap
+
+Complexitatea in timp:   O(logn), priority queue are log n pt fiecare Add
+Complexitatea in spatiu: O(n), unde n este nr total de elemente din minHeap si maxHeap

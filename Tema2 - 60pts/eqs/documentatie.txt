@@ -1,0 +1,10 @@
+In programul asta, iterez prin toate valorile in intervalul [-50, 50]\{0} si despart problema in doua, pentru reducerea complexitatii in timp:
+    1/2. Iterez mai intai pentru primii doi coeficienti si calculez suma lor, iar in unordered_map (care stocheaza frecventa) numaram de cate ori apare opusul sumei respective
+    2/2. Fac alte 3 foruri, unde iterez prin urmatorii doi coeficienti, dar de data asta calculez suma lor, fara a mai face opus,
+         verificand daca gasesc deja suma asta, calculata in forurile de mai sus, caci daca in forurile de mai sus am stocat opusul sumei (-sum),
+         in pasul asta gasim suma (sum), iar opusul sumei + suma (-sum + sum = 0), deci putem creste contorul nostru.
+
+Complexitatea in timp:   O(n^3) unde n este range ul intre care putem avea variabilele noastre ([-50, 50] in cazul nostru, adica n = 101)
+Complexitatea in spatiu: O(n^2) pt ca poate stoca toate combinatiile a1 * i^3 + a2 * j^3 din for-in-for
+
+Am ales unordered_map pt ca perfect pentru frecventa si are complexitatile bune pentru ce imi trebuie (O(1) pt find, acces, insert).
